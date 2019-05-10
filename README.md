@@ -20,7 +20,7 @@ The present R package runs in a reasonable time (i.e., ~1 min) with an input siz
 
 ```r
 x <- readRDS("data.rds")
-o <- psmc(x, niters = 30, B = 100, mc.cores = 1, .....)
+o <- psmc(x, niters = 30, B = 100, mc.cores = 8, .....)
 saveRDS(o, "output_run_psmc.rds")
 ```
 

@@ -1,0 +1,12 @@
+useDynLib(psmcr, .registration = TRUE)
+
+export(psmc, seqBinning, vcf2DNAbin)
+
+importFrom(ape, read.FASTA)
+importFrom(graphics, mtext, plot, points)
+importFrom(grDevices, rgb)
+importFrom(parallel, mclapply)
+
+S3method(logLik, psmc)
+S3method(plot, psmc)
+S3method(print, psmc)

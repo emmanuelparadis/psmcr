@@ -1,0 +1,9 @@
+Package: psmcr
+Version: 0.1
+Date: 2019-04-29
+Title: Pairwise Sequentially Markovian Coalescent
+Authors@R: c(person("Emmanuel", "Paradis", role = c("aut", "cre", "cph"), email = "Emmanuel.Paradis@ird.fr"), person("Heng", "Li", role = c("aut", "cph"), email = "lh3@me.com"))
+Imports: ape, graphics, grDevices, parallel
+ZipData: no
+Description: This package infers population size history from a diploid sequence using the Pairwise Sequentially Markovian Coalescent (PSMC) model.
+License: GPL (>= 2) | MIT + file LICENSE.txt

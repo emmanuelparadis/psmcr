@@ -1,3 +1,7 @@
+/* kmin.h    2019-05-11
+   This file is part of the R-package `psmcr'.
+   See the file ../DESCRIPTION for licensing issues. */
+
 #ifndef KMIN_H
 #define KMIN_H
 

@@ -1,3 +1,7 @@
+/* kmin.c    2019-05-11
+   This file is part of the R-package `psmcr'.
+   See the file ../DESCRIPTION for licensing issues. */
+
 /* The MIT License
 
    Copyright (c) 2008, by Heng Li <lh3@live.co.uk>

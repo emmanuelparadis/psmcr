@@ -1,3 +1,7 @@
+/* Rpsmc.c    2019-05-11
+   This file is part of the R-package `psmcr'.
+   See the file ../DESCRIPTION for licensing issues. */
+
 #include <R.h>
 #include <Rinternals.h>
 #include <R_ext/Utils.h>

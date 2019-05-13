@@ -1,3 +1,7 @@
+/* em.c    2019-05-11
+   This file is part of the R-package `psmcr'.
+   See the file ../DESCRIPTION for licensing issues. */
+
 //#include <math.h> in R.h
 //#include <string.h> in R_ext/RS.h
 //#include <assert.h>

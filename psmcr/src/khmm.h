@@ -1,3 +1,7 @@
+/* khmm.h    2019-05-11
+   This file is part of the R-package `psmcr'.
+   See the file ../DESCRIPTION for licensing issues. */
+
 #ifndef LH3_SCHMM_H_
 #define LH3_SCHMM_H_
 

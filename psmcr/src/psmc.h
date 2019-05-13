@@ -1,3 +1,7 @@
+/* psmc.h    2019-05-11
+   This file is part of the R-package `psmcr'.
+   See the file ../DESCRIPTION for licensing issues. */
+
 #ifndef PSMC_H_LH3
 #define PSMC_H_LH3
 

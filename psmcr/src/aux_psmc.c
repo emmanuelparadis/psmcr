@@ -1,3 +1,7 @@
+/* aux_psmc.c    2019-05-11
+   This file is part of the R-package `psmcr'.
+   See the file ../DESCRIPTION for licensing issues. */
+
 //#include <stdio.h>
 //#include <assert.h>
 //#include <math.h>

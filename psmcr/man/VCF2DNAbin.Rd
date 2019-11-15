@@ -21,6 +21,8 @@ VCF2DNAbin(file, refgenome = NULL, individual = 1, quiet = FALSE)
   package \pkg{pegas} for various functions to handle and check VCF
   files.
 
+  The VCF file must be compressed with GZ (*.vcf.gz).
+
   The reference genome can be given in different ways. By default, a
   file name (or URL) is looked for in the VCF file. Alternatively,
   \code{refgenome} can be either a \code{"DNAbin"} object or the name of

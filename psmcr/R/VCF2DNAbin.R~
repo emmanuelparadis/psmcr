@@ -1,4 +1,4 @@
-## vcf2DNAbin.R (2019-05-06)
+## vcf2DNAbin.R (2019-08-01)
 
 ## Conversion
 
@@ -34,7 +34,7 @@
     rawToChar(x[1:(i - 1)])
 }
 
-vcf2DNAbin <- function(file, refgenome = NULL, individual = 1, quiet = FALSE)
+VCF2DNAbin <- function(file, refgenome = NULL, individual = 1, quiet = FALSE)
 {
     chunck.size <- 1e9
     LF <- charToRaw("\n")
@@ -66,7 +66,7 @@ vcf2DNAbin <- function(file, refgenome = NULL, individual = 1, quiet = FALSE)
         if (!nY) break
         i <- nY
         vol <- vol + nY
-        if (!quiet) cat("\rScanning", vol/1e6, "Mb")
+        if (!quiet) cat("\rScanning", vol/1e6, "MB")
         while (Y[i] != LF) i <- i - 1L
         if (i < nY) {
             trail <- Y[(i + 1):nY]

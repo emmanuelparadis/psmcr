@@ -1,8 +1,8 @@
-## plots.R (2020-11-24)
+## plots.R (2021-03-01)
 
 ## Plots Output of PSMC
 
-## Copyright 2019-2020 Emmanuel Paradis
+## Copyright 2019-2021 Emmanuel Paradis
 
 ## This file is part of the R-package `psmcr'.
 ## See the file ../COPYING for licensing issues.
@@ -10,7 +10,7 @@
 plot.psmc <- function(x, type = "s",
                       xlab = if (scaled) "Scaled time" else "Time",
                       ylab = if (scaled) expression(Theta) else "N",
-                      show.present = TRUE, mutation.rate = 1e-8,
+                      show.present = TRUE, mutation.rate = 1e-8, g = 1,
                       scaled = FALSE, bin.size = 100, ...)
 {
     RS <- x$RS[x$RS[, "iter"] == x$niters, ]
@@ -21,7 +21,8 @@ plot.psmc <- function(x, type = "s",
         yy <- theta0 * RS[, "lambda_k"] / bin.size
     } else {
         ##N0 <- theta0/(4 * mutation.rate / bin.size)
-        N0 <- theta0/(4 * mutation.rate * bin.size)
+        denom <- 4 * mutation.rate * g * bin.size
+        N0 <- theta0 / denom
         xx <- 2 * N0 * RS[, "t_k"]
         yy <- N0 * RS[, "lambda_k"]
     }
@@ -34,7 +35,7 @@ plot.psmc <- function(x, type = "s",
             Tk.boot <- boot$tk / (THETA0 * bin.size)
             Nk.boot <- THETA0 * boot$lk / bin.size
         } else {
-            N0.boot <- boot$theta0/(4 * mutation.rate * bin.size)
+            N0.boot <- boot$theta0 / denom
             Tk.boot <- 2 * N0.boot * boot$tk
             Nk.boot <- N0.boot * boot$lk
         }
@@ -47,5 +48,3 @@ plot.psmc <- function(x, type = "s",
         for (j in 1:ncol(Tk.boot))
             points(Tk.boot[, j], Nk.boot[, j], type = type, col = rgb(.5, .5, .5, .3))
 }
-
-

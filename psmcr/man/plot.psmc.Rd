@@ -7,7 +7,7 @@
 \usage{
 \method{plot}{psmc}(x, type = "s", xlab = if (scaled) "Scaled time" else "Time",
      ylab = if (scaled) expression(Theta) else "N",
-     show.present = TRUE, mutation.rate = 1e-8,
+     show.present = TRUE, mutation.rate = 1e-8, g = 1,
      scaled = FALSE, bin.size = 100, \dots)
 }
 \arguments{
@@ -19,6 +19,7 @@
     in italics (near the zero coordinate on the x-axis).}
   \item{mutation.rate}{the mutation rate for calculating population
     sizes and times (ignored if \code{scaled = TRUE}; see details).}
+  \item{g}{the number of years per generation.}
   \item{scaled}{a logical value. By default, the absolute times and
     population sizes are calculated assuming a value of mutation rate
     given by the previous argument. If \code{scaled = TRUE}, these
@@ -58,7 +59,13 @@
 
   \deqn{\theta_k = 4N_k \mu = \lambda_k \theta_0  s}{theta_k = 4N_k mu = lambda_k * theta_0 * s}
 
-  This second method is used if \code{scaled = TRUE}.
+  This second method is used if \code{scaled = TRUE}. By default, the
+  first method is used.
+
+  The value given to \code{mutation.rate} may be either the mutation
+  rate per year, in which case \code{g} may need to be changed, or the
+  mutation rate per generation, in which case \code{g} may be left equal
+  to one.
 }
 \value{NULL.}
 \references{

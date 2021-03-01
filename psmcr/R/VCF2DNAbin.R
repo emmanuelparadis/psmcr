@@ -1,8 +1,8 @@
-## vcf2DNAbin.R (2019-11-15)
+## vcf2DNAbin.R (2021-02-05)
 
 ## Conversion
 
-## Copyright 2019 Emmanuel Paradis
+## Copyright 2019-2021 Emmanuel Paradis
 
 ## This file is part of the R-package `psmcr'.
 ## See the file ../COPYING for licensing issues.
@@ -60,7 +60,7 @@ VCF2DNAbin <- function(file, refgenome = NULL, individual = 1, quiet = FALSE)
     ## the VCF file must be gzipped, so the above test is skipped
     open(f)
     trail <- raw()
-    vol <- 0L
+    vol <- 0 # not integer so big files are OK
     res <- refgenome
     repeat {
         Y <- readBin(f, "raw", chunck.size)

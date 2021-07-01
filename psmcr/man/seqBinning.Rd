@@ -16,7 +16,7 @@ seqBinning(x, bin.size = 100)
   The main argument \code{x} must be the consensus sequence of an
   individual, so that the ambiguous bases (R, Y, \dots) code for
   heterozygous sites. A consensus sequence can be produced with
-  \code{\link{vcf2DNAbin}}.
+  \code{\link{VCF2DNAbin}}.
 
   The sequences are split into bins of size \code{bin.size}: if there is
   at least one heterozygous site within a bin, then the output sequence
@@ -27,5 +27,5 @@ seqBinning(x, bin.size = 100)
   an object of class \code{"DNAbin"}.
 }
 \author{Emmanuel Paradis}
-\seealso{\code{\link{psmc}}, \code{\link{vcf2DNAbin}}}
+\seealso{\code{\link{psmc}}, \code{\link{VCF2DNAbin}}}
 \keyword{manip}

@@ -1,18 +1,24 @@
 \name{plot.psmc}
 \alias{plot.psmc}
+\alias{lines.psmc}
 \title{Plotting Results of PSMC}
 \description{
   Graphical display of the results of PSMC fitting.
 }
 \usage{
-\method{plot}{psmc}(x, type = "s", xlab = if (scaled) "Scaled time" else "Time",
+\method{plot}{psmc}(x, type = "s", xlim = NULL, ylim = NULL, col = "grey",
+     xlab = if (scaled) "Scaled time" else "Time",
      ylab = if (scaled) expression(Theta) else "N",
      show.present = TRUE, mutation.rate = 1e-8, g = 1,
      scaled = FALSE, bin.size = 100, \dots)
+\method{lines}{psmc}(x, type = "s", mutation.rate = 1e-8, g = 1,
+      col = "blue", scaled = FALSE, bin.size = 100, \dots)
 }
 \arguments{
   \item{x}{an object of class \code{"psmc"}.}
   \item{type}{a character string giving the type of plot.}
+  \item{xlim, ylim}{the limits of both axes.}
+  \item{col}{the colour used for the lines.}
   \item{xlab}{the label under the horizontal axis.}
   \item{ylab}{the label beside the vertical axis.}
   \item{show.present}{a logical value: whether to indicate the present

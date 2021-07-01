@@ -6,7 +6,7 @@ psmcr is an R port of [`psmc`](https://github.com/lh3/psmc). Currently, `psmcr` 
 
 - A `plot` function to display the result of `psmc` with various options.
 
-- The function `vcf2DNAbin` that prepares a consensus genome from a VCF file with the possibility to choose the individual if the VCF file is from a population study.
+- The function `VCF2DNAbin` that prepares a consensus genome from a VCF file with the possibility to choose the individual if the VCF file is from a population study.
 
 - The function `seqBinning` to bin the sequences.
 
@@ -53,9 +53,9 @@ The input for `psmc` is the (eventually binned) consensus sequence of a diploid 
 - a reference genome in a FASTA file, and
 - a VCF file with genotypes from one or several individuals.
 
-The function `vcf2DNAbin` takes as input the VCF file and the reference genome and outputs a consensus sequence. The option `individual` selects which individual to consider in the VCF file in case there are more than one. The reference genome can be specified in different ways:
+The function `VCF2DNAbin` takes as input the VCF file and the reference genome and outputs a consensus sequence. The option `individual` selects which individual to consider in the VCF file in case there are more than one. The reference genome can be specified in different ways:
 
-- by default, `vcf2DNAbin` looks for a reference in the VCF file and opens it (after downloading if it is a remote file);
+- by default, `VCF2DNAbin` looks for a reference in the VCF file and opens it (after downloading if it is a remote file);
 - a "DNAbin" object;
 - the name of a FASTA file.
 

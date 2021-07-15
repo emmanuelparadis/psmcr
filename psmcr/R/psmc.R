@@ -1,8 +1,8 @@
-## psmc.R (2019-05-06)
+## psmc.R (2021-07-09)
 
 ##   PSMC
 
-## Copyright 2019 Emmanuel Paradis
+## Copyright 2019-2021 Emmanuel Paradis
 
 ## This file is part of the R-package `psmcr'.
 ## See the file ../COPYING for licensing issues.
@@ -42,19 +42,23 @@ psmc <- function(x, parapattern = "4+5*3+4", maxt = 15, niters = 30,
         for (i in seq_along(x)) {
             z <- x[[i]]
             lz <- length(z)
+            chrname <- names(x)[i]
             a <- 1; b <- trunksize
+            j <- 0L
             repeat {
                 if (b > lz) b <- lz
                 if (a >= lz) break
+                j <- j + 1L
                 xboot <- c(xboot, list(z[a:b]))
+                names(xboot)[length(xboot)] <- paste0(chrname, "_segment", j)
                 a <- b + 1L
                 b <- b + trunksize
             }
         }
-        llx <- ceiling(lengths(x)/trunksize)
-        names(xboot) <- paste(unlist(mapply(rep, names(x), each = llx)),
-                              unlist(mapply(":", 1, llx)),
-                              sep = "_segment")
+        ##llx <- ceiling(lengths(x)/trunksize)
+        ##names(xboot) <- paste(unlist(mapply(rep, names(x), each = llx)),
+        ##                      unlist(mapply(":", 1, llx)),
+        ##                      sep = "_segment")
 
         theta0 <- numeric(B)
         tk <- lk <- matrix(0, nintervs, B)

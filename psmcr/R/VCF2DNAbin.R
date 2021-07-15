@@ -88,7 +88,7 @@ seqBinning <- function(x, bin.size = 100)
 {
     if (!inherits(x, "DNAbin"))
         stop("'x' must be of class DNAbin")
-    res <- .Call("seqBinning_DNAbin", x, as.integer(bin.size))
+    res <- .Call(seqBinning_DNAbin, x, as.integer(bin.size))
     names(res) <- names(x)
     class(res) <- "DNAbin"
     res

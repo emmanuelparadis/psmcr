@@ -1,6 +1,6 @@
 useDynLib(psmcr, .registration = TRUE)
 
-export(psmc, seqBinning, VCF2DNAbin)
+export(import.psmc, psmc, seqBinning, VCF2DNAbin)
 
 importFrom(ape, read.FASTA)
 importFrom(graphics, lines, mtext, plot, points)

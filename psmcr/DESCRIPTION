@@ -1,6 +1,6 @@
 Package: psmcr
-Version: 0.1-3
-Date: 2021-07-09
+Version: 0.1-4
+Date: 2021-11-04
 Title: Pairwise Sequentially Markovian Coalescent
 Authors@R: c(person("Emmanuel", "Paradis", role = c("aut", "cre", "cph"), email = "Emmanuel.Paradis@ird.fr"), person("Heng", "Li", role = c("aut", "cph"), email = "lh3@me.com"))
 Imports: ape, graphics, grDevices, parallel

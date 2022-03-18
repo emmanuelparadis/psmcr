@@ -1,8 +1,8 @@
-## plots.R (2021-07-01)
+## plots.R (2022-03-18)
 
 ## Plots Output of PSMC
 
-## Copyright 2019-2021 Emmanuel Paradis
+## Copyright 2019-2022 Emmanuel Paradis
 
 ## This file is part of the R-package `psmcr'.
 ## See the file ../COPYING for licensing issues.
@@ -67,7 +67,7 @@ plot.psmc <- function(x, type = "s", xlim = NULL, ylim = NULL, col = "grey",
     if (show.present) mtext("Present", 1, 2.5, at = 0, font = 3)
     if (withbootstrap) {
         col <- col2rgb(col)
-        col <- rgb(col[1L], col[2L], col[3L], .3, maxColorValue = 255)
+        col <- rgb(col[1L], col[2L], col[3L], .3 * 255, maxColorValue = 255)
         for (j in 1:ncol(Tk.boot))
             points(Tk.boot[, j], Nk.boot[, j], type = type, col = col)
     }
@@ -91,7 +91,7 @@ lines.psmc <- function(x, type = "s", mutation.rate = 1e-8, g = 1,
     lines(xx, yy, type = type, lwd = 3, col = col, ...)
     if (withbootstrap) {
         col <- col2rgb(col)
-        col <- rgb(col[1L], col[2L], col[3L], .3, maxColorValue = 255)
+        col <- rgb(col[1L], col[2L], col[3L], .3 * 255, maxColorValue = 255)
         for (j in 1:ncol(Tk.boot))
             points(Tk.boot[, j], Nk.boot[, j], type = type, col = col)
     }

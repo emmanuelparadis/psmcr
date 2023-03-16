@@ -1,4 +1,4 @@
-/* Rpsmc.c    2019-05-11
+/* Rpsmc.c    2023-03-16
    This file is part of the R-package `psmcr'.
    See the file ../DESCRIPTION for licensing issues. */
 
@@ -152,7 +152,7 @@ void count_CpG(SEXP SEQ, int nint, char *cpgfilename)
 	    if (k >= step) {
 		z[2] = n - z[0];
 		fwrite(z, 4, 5, f);
-		memset(z, 0, 5);
+		memset(z, 0, 5 * sizeof(int));
 		k = 0;
 	    }
 	}
